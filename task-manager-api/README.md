@@ -101,7 +101,7 @@ Response (201 Created)
 
 ## 2. Login (Get JWT Token)
 Request
-```json
+```http
 POST /auth/login
 Content-Type: application/json
 
