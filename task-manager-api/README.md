@@ -70,8 +70,8 @@ Follow these steps precisely to set up and run the application.
 
 | Endpoint | Method | Description | Authentication |
 | :--- | :--- | :--- | :--- |
-| `/auth/register` | `POST` | Create a new user account. | Yes |
-| `/auth/login` | `POST` | Log in and receive an access token. | Yes |
+| `/auth/register` | `POST` | Create a new user account. | No |
+| `/auth/login` | `POST` | Log in and receive an access token. | No |
 | `/tasks` | `GET` | Get a list of tasks (supports **pagination** & **filtering**). | Yes |
 | `/tasks` | `POST` | Create a new task. | Yes |
 | `/tasks/<id>` | `GET` | Get details of a specific task. | Yes |
@@ -142,6 +142,68 @@ Response (201 Created)
     "title": "Finalize Submission",
     "completed": false,
     "user_id": 1
+}
+```
+### 4. Retrieve All Tasks — GET /tasks
+This example demonstrates the Read operation and the Pagination/Filtering bonus features.
+
+Request (Example with filtering):
+
+```HTTP
+
+GET /tasks?completed=false&page=1&per_page=10
+Authorization: Bearer <access_token>
+```
+Response (200 OK):
+```JSON
+
+{
+    "tasks": [
+        {
+            "id": 1,
+            "title": "Finalize Submission",
+            "...": "..."
+        }
+    ],
+    "total_tasks": 1,
+    "total_pages": 1,
+    "current_page": 1
+}
+```
+### 5. Update Task — PUT /tasks/{id}
+Request (Update Task ID 1):
+
+```HTTP
+PUT /tasks/1
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+{
+    "title": "Assignment Submitted",
+    "completed": true
+}
+```
+Response (200 OK):
+```JSON
+{
+    "id": 1,
+    "title": "Assignment Submitted",
+    "completed": true,
+    "user_id": 1,
+    "...": "..."
+}
+```
+### 6. Delete Task — DELETE /tasks/{id}
+Request (Delete Task ID 1):
+
+```HTTP
+DELETE /tasks/1
+Authorization: Bearer <access_token>
+Response (200 OK):
+
+```JSON
+{
+    "msg": "Task deleted successfully"
 }
 ```
 ## 🧪 3. Testing
