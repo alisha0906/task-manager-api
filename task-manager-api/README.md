@@ -70,8 +70,8 @@ Follow these steps precisely to set up and run the application.
 
 | Endpoint | Method | Description | Authentication |
 | :--- | :--- | :--- | :--- |
-| `/auth/register` | `POST` | Create a new user account. | No |
-| `/auth/login` | `POST` | Log in and receive an access token. | No |
+| `/auth/register` | `POST` | Create a new user account. | Yes |
+| `/auth/login` | `POST` | Log in and receive an access token. | Yes |
 | `/tasks` | `GET` | Get a list of tasks (supports **pagination** & **filtering**). | Yes |
 | `/tasks` | `POST` | Create a new task. | Yes |
 | `/tasks/<id>` | `GET` | Get details of a specific task. | Yes |
