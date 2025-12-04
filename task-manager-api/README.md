@@ -120,7 +120,7 @@ Response (200 OK)
 Copy this token and include it in the Authorization header:
 Authorization: Bearer <access_token>
 
-## 📝 Task CRUD Examples
+## Task CRUD Examples
 (Requires Authorization: Bearer <access_token>)
 ### 3. Create Task — POST /tasks
 Request
@@ -207,9 +207,9 @@ Response (200 OK):
     "msg": "Task deleted successfully"
 }
 ```
-## 🧪 3. Testing
+## 3. Testing
 
-A. Unit Test Execution
+Unit Test Execution
 This project includes unit tests (tests/test_tasks.py) that cover all endpoints and authorization logic.
 
 1. Stop the running server.
