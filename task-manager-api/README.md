@@ -146,14 +146,15 @@ Response (201 Created)
 ```
 ## 🧪 3. Testing
 
-Your project includes full unit tests for all endpoints.
-A. Stop the Server
-B. Set Python Path
-(Required for module discovery)
+A. Unit Test Execution
+This project includes unit tests (tests/test_tasks.py) that cover all endpoints and authorization logic.
+
+1. Stop the running server.
+2. Set Python Path (required for module discovery):
 ```powershell
 $env:PYTHONPATH="."
 ```
-C. Run Pytest
+3. Run Pytest
 ```bash
 pytest tests/
 ```
