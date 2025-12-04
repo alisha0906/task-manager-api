@@ -91,25 +91,17 @@ Content-Type: application/json
     "username": "user1",
     "password": "securepassword123"
 }
-
-🔐 Authentication Flow
-1. Register User
-Request
-POST /auth/register
-Content-Type: application/json
-
-{
-    "username": "user1",
-    "password": "securepassword123"
-}
-
+```
 Response (201 Created)
+```json
 {
     "msg": "User created successfully"
 }
+```
 
-2. Login (Get JWT Token)
+## 2. Login (Get JWT Token)
 Request
+```json
 POST /auth/login
 Content-Type: application/json
 
@@ -117,21 +109,22 @@ Content-Type: application/json
     "username": "user1",
     "password": "securepassword123"
 }
-
+```
 Response (200 OK)
+```json
 {
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 }
-
+```
 
 Copy this token and include it in the Authorization header:
-
 Authorization: Bearer <access_token>
 
-📝 Task CRUD Examples
+## 📝 Task CRUD Examples
 (Requires Authorization: Bearer <access_token>)
-3. Create Task — POST /tasks
+### 3. Create Task — POST /tasks
 Request
+```http
 POST /tasks
 Authorization: Bearer <access_token>
 Content-Type: application/json
@@ -141,47 +134,28 @@ Content-Type: application/json
     "description": "Verify all tests pass and README is complete.",
     "completed": false
 }
-
+```
 Response (201 Created)
+```json
 {
     "id": 1,
     "title": "Finalize Submission",
     "completed": false,
     "user_id": 1
 }
-
-🧪 3. Testing
+```
+## 🧪 3. Testing
 
 Your project includes full unit tests for all endpoints.
-
 A. Stop the Server
-
-Press:
-
-Ctrl + C
-
 B. Set Python Path
-
 (Required for module discovery)
-
+```powershell
 $env:PYTHONPATH="."
-
+```
 C. Run Pytest
+```bash
 pytest tests/
+```
 
-
-Expected Output:
-
-7 passed in X.XXs
-
-📂 4. Project Structure
-task-manager-api/
-├── app.py              # Main Flask app, context, and blueprint registration
-├── config.py           # Application configuration and JWT settings
-├── models.py           # Database Models (User, Task)
-├── auth.py             # User authentication routes
-├── routes.py           # Task CRUD endpoints
-├── tests/
-│   └── test_tasks.py   # Unit tests for API endpoints
-├── .env                # Environment variables
-└── requirements.txt    # Project dependencies
+Expected Output:  7 passed in X.XXs
