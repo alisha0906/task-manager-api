@@ -80,7 +80,7 @@ Follow these steps precisely to set up and run the application.
 
 ### Authentication Flow
 
-### 1. Register User
+## 1. Register User
 
 **Request:**
 ```http
