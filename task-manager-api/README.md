@@ -80,7 +80,7 @@ Follow these steps precisely to set up and run the application.
 
 ### Authentication Flow
 
-#### 1. Register User
+### 1. Register User
 
 **Request:**
 ```http
@@ -199,6 +199,7 @@ Request (Delete Task ID 1):
 ```HTTP
 DELETE /tasks/1
 Authorization: Bearer <access_token>
+```
 Response (200 OK):
 
 ```JSON
